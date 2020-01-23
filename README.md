@@ -21,7 +21,7 @@ Roshni  | roshni20@stanford.edu | <img src="" alt="Roshni" width="157.5" height=
 # Team Skills Matrix:
 
 Member | Hat | Technical Skills | Personal Traits | Desired Growth | Weaknesses
---- | --- | --- | --- | --- | --- | ---
+--- | --- | --- | --- | --- | --- 
 Anin | Blue | Programming, AI, Statistics/ML | Big Picture, focus on end goal | PM, design | Design
 Karina | White | Full stack web dev, backend, AI, machine learning | Organized, reliable, creative | PM, UX  | Design, UX
 Phoebe | Blue | Backend, AI, web dev | Adaptable, logical | PM, design  | Design
