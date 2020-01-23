@@ -14,8 +14,8 @@ Member | Email | Photo
 --- | --- | ---
 Anin | asayana@stanford.edu | <img src="https://i.imgur.com/5vuq1J2.png" alt="Anin" width="157.5" height="157.5">
 Karina | karina5@stanford.edu | <img src="https://i.imgur.com/JvXbY0N.jpg" alt="Karina" width="157.5" height="157.5">
-Phoebe Kimm | phoebek@stanford.edu | <img src="https://i.imgur.com/CoKhdyO.jpg" alt="Phoebe" width="157.5" height="201">
-Roshni  | roshni20@stanford.edu | <img src="https://i.imgur.com/P9kxEli.jpg" alt="Roshni" width="157.5" height="164.4">
+Phoebe Kimm | phoebek@stanford.edu | <img src="https://i.imgur.com/CoKhdyO.jpg" alt="Phoebe" width="157.5" >
+Roshni  | roshni20@stanford.edu | <img src="https://i.imgur.com/P9kxEli.jpg" alt="Roshni" width="157.5" >
 
 
 # Team Skills Matrix:
