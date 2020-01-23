@@ -1,6 +1,6 @@
 # Electric
 
-<img src="https://i.imgur.com/gSrwoCd.png" alt="Electric" width="540" height="185">
+<img src="https://i.imgur.com/gSrwoCd.png" alt="Electric">
 
 
 
