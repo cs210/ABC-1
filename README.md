@@ -2,11 +2,10 @@
 
 <img src="https://i.imgur.com/gSrwoCd.png" alt="Electric">
 
+We're passionate about democracy, and would like voters to be as informed as possible before making a decision. We are planning to build a web application that takes self-reported voter values as input, clusters them, and presents the data back to the voters in a clear and visually appealing way that helps them understand where they stand relative to major election issues. Additionally, we hope to give voters information about where they lie on the political spectrum more generally. We will score voter’s opinions on these major issues, and calculate a percentage match to current candidates in the presidential election, which will also be presented to the user. By giving voters detailed information about their political standing and how robustly they match to political candidates, we hope they will not only be encouraged to participate in the democratic process but also be more informed about candidates. 
 
 
 Team Song - TODO
-
-Code Repository - TODO
 
 
 # Team Members
@@ -22,16 +21,17 @@ Roshni  | roshni20@stanford.edu | <img src="https://i.imgur.com/P9kxEli.jpg" alt
 
 Member | Hat | Technical Skills | Personal Traits | Desired Growth | Weaknesses
 --- | --- | --- | --- | --- | --- 
-Anin | Blue | Programming, AI, Statistics/ML | Big Picture, focus on end goal | PM, design | Design
-Karina | White | Full stack web dev, backend, AI, machine learning | Organized, reliable, creative | PM, UX  | Design, UX
+Anin | Yellow | Programming, AI, Statistics/ML | Big Picture, focus on end goal | PM, design | Design
+Karina | Green | Full stack web dev, backend, AI, machine learning | Organized, reliable, creative | PM, UX  | Design, UX
 Phoebe | Blue | Backend, AI, web dev | Adaptable, logical | PM, design  | Design
 Roshni | Blue | Statistical Data, Machine Learning | Team building, Organized | Application Building  | Front end
 
 
 
 # Team Communication:
-1. Email us at TODO
 
-2. Slack: TODO
+1. Contact us via email
 
-3. Documentation: [Github Wiki](https://github.com/cs210/ABC-1/wiki).
+2. Documentation: [Github Wiki](https://github.com/cs210/ABC-1/wiki).
+
+3. Internal communication - iMessage
