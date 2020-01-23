@@ -12,7 +12,7 @@ We're passionate about democracy, and would like voters to be as informed as pos
 Member | Email | Photo
 --- | --- | ---
 Anin | asayana@stanford.edu | <img src="https://i.imgur.com/5vuq1J2.png" alt="Anin" width="157.5" height="157.5">
-Karina | karina5@stanford.edu | <img src="https://i.imgur.com/JvXbY0N.jpg" alt="Karina" width="157.5" height="157.5">
+Karina Sanchez | karina5@stanford.edu | <img src="https://i.imgur.com/JvXbY0N.jpg" alt="Karina" width="157.5" height="157.5">
 Phoebe Kimm | phoebek@stanford.edu | <img src="https://i.imgur.com/CoKhdyO.jpg" alt="Phoebe" width="157.5" >
 Roshni  | roshni20@stanford.edu | <img src="https://i.imgur.com/P9kxEli.jpg" alt="Roshni" width="157.5" >
 
@@ -35,3 +35,5 @@ Roshni | Blue | Statistical Data, Machine Learning | Team building, Organized | 
 2. Documentation: [Github Wiki](https://github.com/cs210/ABC-1/wiki).
 
 3. Internal communication - iMessage
+
+4. Gooogle Drive: (https://drive.google.com/drive/folders/0AKTIGkaqLy51Uk9PVA)
