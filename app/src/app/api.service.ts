@@ -13,4 +13,8 @@ export class ApiService {
   getNews(){
     return this.httpClient.get(`http://newsapi.org/v2/top-headlines?country=us&apiKey=${this.API_KEY}`);
   }
+
+  getTimeline(){
+    return this.httpClient.get(`http://newsapi.org/v2/top-headlines?sources=abc-news&q=coronavirus&from=2020-03-01&apiKey=${this.API_KEY}`);
+    }
 }
