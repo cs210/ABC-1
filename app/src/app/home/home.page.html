@@ -9,6 +9,18 @@
   </ion-toolbar>
 </ion-header>
 
+<ion-segment #S (ionChange)="segmentChanged(S.value)">
+  <ion-segment-button value="left-leaning">
+    <ion-label>Left</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="all">
+    <ion-label>All</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="right-leaning">
+    <ion-label>Right</ion-label>
+  </ion-segment-button>
+</ion-segment>
+
 <ion-content color="primary">
     <ion-card>
       <!--<ion-img src="/assets/shapes.svg"></ion-img>-->
@@ -17,7 +29,7 @@
       </ion-card-header>
       <ion-card-content>
         <p>
-          Enjoy the latest news from TechCrunch. 
+          Currently displaying articles from {{informPolarity}} sources.
         </p>
         <ion-spinner *ngIf="!articles" name="dots"></ion-spinner>
       </ion-card-content>
