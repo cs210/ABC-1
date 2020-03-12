@@ -11,7 +11,8 @@ const routes: Routes = [
     path: 'home',
     loadChildren: './home/home.module#HomePageModule'
   },
-  { path: 'about', loadChildren: './about/about.module#AboutPageModule' }
+  { path: 'about', loadChildren: './about/about.module#AboutPageModule' },
+  { path: 'timeline', loadChildren: './timeline/timeline.module#TimelinePageModule' }
 ];
 
 @NgModule({
