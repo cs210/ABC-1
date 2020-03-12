@@ -11,7 +11,7 @@ import { ApiService } from '../api.service';
 export class HomePage {
   
   articles;
-  informPolarity;
+  informPolarity = 'all';
 
   constructor(private apiService: ApiService){}
 
