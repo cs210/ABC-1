@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    
+    <ion-title>
+      Timeline
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="primary">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle> Welcome to the Timeline Feature. Currently displaying the history of the Coronavirus. Scroll to see the development of the story! </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        History of the Coronavirus (scroll for earlier stories)
+      </p>
+      <ion-spinner *ngIf="!articles" name="dots"></ion-spinner>
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card *ngFor="let article of articles">
+    <ion-img src="{{article.urlToImage}}"></ion-img>
+    <ion-card-header>
+      <ion-card-subtitle>{{article.title}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        {{article.description}}
+      </p>
+      <ion-button ion-button fill="outline" href="{{article.url}}" large>Read full article</ion-button>
+
+    </ion-card-content>
+  </ion-card>
+
+  
+
+</ion-content>

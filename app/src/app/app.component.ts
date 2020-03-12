@@ -19,6 +19,11 @@ export class AppComponent {
       title: 'About',
       url: '/about',
       icon: 'help-circle-outline'
+    },
+    {
+      title: 'Timeline',
+      url: '/timeline',
+      icon: 'time'
     }
   ];
 
