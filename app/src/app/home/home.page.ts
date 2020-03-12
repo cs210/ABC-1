@@ -9,8 +9,14 @@ import { ApiService } from '../api.service';
 export class HomePage {
   
   articles;
+  informPolarity = 'all';
 
   constructor(private apiService: ApiService){}
+
+  segmentChanged(ev: any) {
+    console.log('Segment changed', ev);
+    this.informPolarity = ev;
+  }
 
   ionViewDidEnter(){
 
