@@ -9,14 +9,14 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-segment (ionChange)="segmentChanged($event)">
-  <ion-segment-button value="friends">
+<ion-segment #S (ionChange)="segmentChanged(S.value)">
+  <ion-segment-button value="left">
     <ion-label>Left</ion-label>
   </ion-segment-button>
-  <ion-segment-button value="enemies">
+  <ion-segment-button value="center">
     <ion-label>Center</ion-label>
   </ion-segment-button>
-  <ion-segment-button value="enemies">
+  <ion-segment-button value="right">
     <ion-label>Right</ion-label>
   </ion-segment-button>
 </ion-segment>
@@ -29,7 +29,7 @@
       </ion-card-header>
       <ion-card-content>
         <p>
-          Enjoy the latest news. 
+          Currently displaying {{informPolarity}} articles.
         </p>
         <ion-spinner *ngIf="!articles" name="dots"></ion-spinner>
       </ion-card-content>
