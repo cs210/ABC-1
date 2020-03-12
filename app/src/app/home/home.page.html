@@ -9,6 +9,18 @@
   </ion-toolbar>
 </ion-header>
 
+<ion-segment (ionChange)="segmentChanged($event)">
+  <ion-segment-button value="friends">
+    <ion-label>Left</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="enemies">
+    <ion-label>Center</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="enemies">
+    <ion-label>Right</ion-label>
+  </ion-segment-button>
+</ion-segment>
+
 <ion-content color="primary">
     <ion-card>
       <!--<ion-img src="/assets/shapes.svg"></ion-img>-->
@@ -17,7 +29,7 @@
       </ion-card-header>
       <ion-card-content>
         <p>
-          Enjoy the latest news from TechCrunch. 
+          Enjoy the latest news. 
         </p>
         <ion-spinner *ngIf="!articles" name="dots"></ion-spinner>
       </ion-card-content>
