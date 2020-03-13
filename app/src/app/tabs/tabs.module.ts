@@ -13,7 +13,7 @@ const routes: Routes = [
     component: TabsPage,
     children:[
         { path: 'home', loadChildren: '../home/home.module#HomePageModule' },
-        { path: 'timeline', loadChildren: './timeline/timeline.module#TimelinePageModule' },
+        { path: 'timeline', loadChildren: '../timeline/timeline.module#TimelinePageModule' },
         { path: 'about', loadChildren: '../about/about.module#AboutPageModule' },
     ]
   },
