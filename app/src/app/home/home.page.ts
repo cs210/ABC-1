@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../api.service';
 import { InAppBrowser,InAppBrowserOptions } from '@ionic-native/in-app-browser/ngx';
+import { compareTwoStrings } from 'string-similarity';
+import { removeStopwords } from 'stopword';
 
 @Component({
   selector: 'app-home',
@@ -29,5 +31,27 @@ export class HomePage {
 
   openInAppBrowser(url : string) {
     this.iab.create(url, '_blank');
+  }
+
+  otherViewpoints(articles: Array<object>, currArticle: object) {
+    let suggested: Array<object> = [];
+    for (let a in articles) {
+      // add some check to make sure that the next article is more center
+      // than the one currently being viewed
+      if (JSON.stringify(articles[a]) == JSON.stringify(currArticle) || JSON.stringify(articles[a]['source']) == JSON.stringify(currArticle['source'])) {
+        continue;
+      }
+      console.log(removeStopwords((articles[a]['title'] + articles[a]['description'] + articles[a]['content']).split(' ')).join(' '));
+      const art = {
+        article: articles[a],
+        score: compareTwoStrings(removeStopwords((articles[a]['title'] + articles[a]['description'] + articles[a]['content']).split(' ')).join(' '),
+          removeStopwords((currArticle['title'] + currArticle['description'] + currArticle['content']).split(' ')).join(' ')),
+      };
+      suggested.push(art);
+    }
+    const sorted = suggested.sort((a1, a2)  => {
+      return a2['score'] - a1['score'];
+    });
+    console.log(sorted[0])
   }
 }

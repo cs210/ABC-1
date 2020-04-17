@@ -30,6 +30,8 @@
     "gulp-sass": "^4.0.2",
     "node-sass": "^4.13.1",
     "rxjs": "~6.3.3",
+    "stopword": "^1.0.0",
+    "string-similarity": "^4.0.1",
     "zone.js": "~0.8.29"
   },
   "devDependencies": {
