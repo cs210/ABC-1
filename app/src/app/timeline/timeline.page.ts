@@ -7,17 +7,10 @@ import { ApiService } from '../api.service';
   styleUrls: ['./timeline.page.scss'],
 })
 export class TimelinePage implements OnInit {
-  articles;
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-  }
-  ionViewDidEnter(){
-    this.apiService.getTimeline().subscribe((data)=>{
-      console.log(data);
-      this.articles = data['articles'];
-    });
   }
 
 }
