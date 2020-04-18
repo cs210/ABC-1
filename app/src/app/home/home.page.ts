@@ -41,7 +41,6 @@ export class HomePage {
       if (JSON.stringify(articles[a]) == JSON.stringify(currArticle) || JSON.stringify(articles[a]['source']) == JSON.stringify(currArticle['source'])) {
         continue;
       }
-      console.log(removeStopwords((articles[a]['title'] + articles[a]['description'] + articles[a]['content']).split(' ')).join(' '));
       const art = {
         article: articles[a],
         score: compareTwoStrings(removeStopwords((articles[a]['title'] + articles[a]['description'] + articles[a]['content']).split(' ')).join(' '),
@@ -51,7 +50,9 @@ export class HomePage {
     }
     const sorted = suggested.sort((a1, a2)  => {
       return a2['score'] - a1['score'];
-    });
+    }).map((a) => {
+      return a['article'];
+    }).slice(1,3);
     console.log(sorted[0])
   }
 }
