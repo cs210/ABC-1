@@ -29,6 +29,8 @@ export class HomePage {
   }
 
   ionViewDidEnter(){
+    this.ga.trackView('Home');
+    this.ga.trackEvent('Switched', 'Home');
 
     this.apiService.getNews().subscribe((data)=>{
       console.log(data);
@@ -43,7 +45,10 @@ export class HomePage {
       console.log('Google analytics is ready now');
       //the component is ready and you can call any method here
       this.ga.debugMode();
-      this.ga.trackView('Home Screen');
+      this.ga.trackView('timeline');
+      //alert('reached inside')
+      this.ga.trackTiming('Timing', 100, 'Timing', 'Timing') // where IntervalInMilliseconds is numeric
+
 
 
       //this.ga.setAllowIDFACollection(true);
@@ -73,6 +78,7 @@ export class HomePage {
 
   openInAppBrowser(url : string) {
     this.iab.create(url, '_blank');
+    this.ga.trackEvent('URL Click', url);
   }
 
   otherViewpoints(articles: Array<object>, currArticle: object) {
