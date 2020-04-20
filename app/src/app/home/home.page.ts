@@ -6,6 +6,8 @@ import { compareTwoStrings } from 'string-similarity';
 import { removeStopwords } from 'stopword';
 import {FlexLayoutModule} from "@angular/flex-layout";
 
+import { GoogleAnalytics } from '@ionic-native/google-analytics/ngx';
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -24,14 +26,21 @@ export class HomePage {
   currArticle;
   isHidden = true;
 
-  constructor(private apiService: ApiService, private iab: InAppBrowser){}
+  constructor(
+    private apiService: ApiService, 
+    private iab: InAppBrowser,
+    private ga: GoogleAnalytics
+  ){}
 
   segmentChanged(ev: any) {
     console.log('Segment changed', ev);
     this.informPolarity = ev;
+    this.ga.trackEvent('Polarity', ev)
   }
 
   ionViewDidEnter(){
+    this.ga.trackView('Home');
+    this.ga.trackEvent('Switched', 'Home');
 
     this.apiService.getNews().subscribe((data)=>{
       console.log(data);
@@ -39,8 +48,22 @@ export class HomePage {
     });
   }
 
+  ngOnInit(){
+
+    this.ga.startTrackerWithId('UA-163974285-1')
+    .then(() => {
+      console.log('Google analytics is ready now');
+      //the component is ready and you can call any method here
+      this.ga.debugMode();
+      //alert('reached inside')
+    })
+    .catch(e => console.log('Error starting GoogleAnalytics', e));
+
+  }
+
   openInAppBrowser(url : string) {
     this.iab.create(url, '_blank');
+    this.ga.trackEvent('URL Click', url);
   }
 
   isHiddenForArticle(article:object) {
@@ -51,6 +74,8 @@ export class HomePage {
   viewpointsOnClick(article: object) {
     this.isHidden = !this.isHidden;
     this.currArticle = article;
+
+    this.ga.trackEvent('Polarity', 'Other Viewpoint');
 
     let suggested: Array<object> = [];
     for (let a in this.articles) {
