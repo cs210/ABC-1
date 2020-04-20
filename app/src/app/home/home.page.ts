@@ -45,36 +45,11 @@ export class HomePage {
       console.log('Google analytics is ready now');
       //the component is ready and you can call any method here
       this.ga.debugMode();
-      this.ga.trackView('timeline');
       //alert('reached inside')
-      this.ga.trackTiming('Timing', 100, 'Timing', 'Timing') // where IntervalInMilliseconds is numeric
-
-
-
-      //this.ga.setAllowIDFACollection(true);
     })
     .catch(e => console.log('Error starting GoogleAnalytics', e));
 
-    // this.ga.startTrackerWithId('UA-163974285-1')
-    //   .then(() => {}).catch(e => alert('Error starting GoogleAnalytics == '+ e));
- 
-    // alert('Reached 0.')
-
-    // this.ga.trackView('Home Page')
-    // .then(() => {})
-    // .catch(e => alert('Failed to setup home page tracker.'));
-
-    // alert('Reached 1.')
   }
- 
- 
-  // itemTapped(event, item) {
-  //   this.ga.trackEvent('Category', 'Tapped Action', 'Item Tapped is '+item, 0);
-  //   // That's right, we're pushing to ourselves!
-  //   this.navCtrl.push(ListPage, {
-  //     item: item
-  //   });
-  // }
 
   openInAppBrowser(url : string) {
     this.iab.create(url, '_blank');
