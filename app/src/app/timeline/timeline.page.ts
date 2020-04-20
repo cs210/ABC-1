@@ -10,7 +10,6 @@ import { GoogleAnalytics } from '@ionic-native/google-analytics/ngx';
   styleUrls: ['./timeline.page.scss'],
 })
 export class TimelinePage implements OnInit {
-  articles;
 
   constructor(private apiService: ApiService, private ga: GoogleAnalytics) { }
 
