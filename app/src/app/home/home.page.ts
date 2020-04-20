@@ -75,6 +75,8 @@ export class HomePage {
     this.isHidden = !this.isHidden;
     this.currArticle = article;
 
+    this.ga.trackEvent('Polarity', 'Other Viewpoint');
+
     let suggested: Array<object> = [];
     for (let a in this.articles) {
       // add some check to make sure that the next article is more center
