@@ -18,12 +18,6 @@ export class TimelinePage implements OnInit {
   ionViewDidEnter(){
     this.ga.trackView('Timeline');
     this.ga.trackEvent('Switched', 'Timeline');
-    
-
-    this.apiService.getTimeline().subscribe((data)=>{
-      console.log(data);
-      this.articles = data['articles'];
-    });
   }
 
 }
