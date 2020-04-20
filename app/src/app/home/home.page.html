@@ -30,9 +30,15 @@
       </ion-card-header>
     </div>
     <ion-card-content>
-      <ion-button class="viewpoint-button" (click)="otherViewpoints(articles, article)" fill="outline" large>Other Viewpoints</ion-button>
+      <ion-button class="viewpoint-button" (click)="viewpointsOnClick(article)" fill="outline" large>Other Viewpoints</ion-button>
+      <ion-grid [hidden]=isHiddenForArticle(article)>
+        <ion-row no-padding>
+          <ion-col *ngFor="let suggested of suggestedArticles">
+                  <ion-img src ="{{suggested.urlToImage}}" (click)="openInAppBrowser(suggested.url)"></ion-img>
+                  <h3>{{suggested.title}}</h3>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-card-content>
   </ion-card>
-
 </ion-content>
-
