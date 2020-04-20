@@ -12,23 +12,12 @@
 <ion-content color="primary">
   <ion-card>
     <ion-card-header>
-      <ion-card-subtitle> Get news in context </ion-card-subtitle>
+      <ion-card-subtitle> Welcome to the Timeline Feature. Currently displaying a few top stories with available timelines. Click to see the development of the these top stories! </ion-card-subtitle>
     </ion-card-header>
-    <ion-card-content>
-      <p>
-        Timeline: Coronavirus
-      </p>
-      <ion-spinner *ngIf="!articles" name="dots"></ion-spinner>
-    </ion-card-content>
-  </ion-card>
-  
-  <ion-card *ngFor="let article of articles">
-    <div (click)="openInAppBrowser(article.url)">
-      <ion-img src="{{article.urlToImage}}"></ion-img>
-      <ion-card-header>
-        <ion-card-subtitle class="article-title">{{article.title}}</ion-card-subtitle>
-      </ion-card-header>
-    </div>
+    <ion-button ion-button fill="outline" href="/coronavirus" >Coronavirus</ion-button>
+    <ion-button ion-button fill="outline" href="/government" >Government Response</ion-button>
+    <ion-button ion-button fill="outline" href="/economy" >Economic Crisis</ion-button>
+
   </ion-card>
 
   

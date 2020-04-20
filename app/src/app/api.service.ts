@@ -17,4 +17,16 @@ export class ApiService {
   getTimeline(){
     return this.httpClient.get(`http://newsapi.org/v2/top-headlines?country=us&q=coronavirus&apiKey=${this.API_KEY}`);
     }
+
+  getCoronavirus(){
+    return this.httpClient.get(`http://newsapi.org/v2/top-headlines?country=us&q=coronavirus&apiKey=${this.API_KEY}`);
+    }
+
+  getGov(){
+    return this.httpClient.get(`http://newsapi.org/v2/top-headlines?country=us&q=president&apiKey=${this.API_KEY}`);
+    }
+
+  getEcon(){
+    return this.httpClient.get(`http://newsapi.org/v2/top-headlines?country=us&q=employees&apiKey=${this.API_KEY}`);
+    }
 }
