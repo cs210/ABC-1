@@ -14,6 +14,10 @@ export class ApiService {
     return this.httpClient.get(`http://newsapi.org/v2/top-headlines?country=us&apiKey=${this.API_KEY}`);
   }
 
+  getABC() {
+    return this.httpClient.get('https://abcnews.go.com/configuration/iphonev5-60729246')
+  }
+
   getTimeline(){
     return this.httpClient.get(`http://newsapi.org/v2/top-headlines?country=us&q=coronavirus&apiKey=${this.API_KEY}`);
     }

@@ -9,17 +9,15 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-segment #S (ionChange)="segmentChanged(S.value)">
-  <ion-segment-button value="left-leaning">
-    <ion-label>Left</ion-label>
-  </ion-segment-button>
-  <ion-segment-button value="all">
-    <ion-label>All</ion-label>
-  </ion-segment-button>
-  <ion-segment-button value="right-leaning">
-    <ion-label>Right</ion-label>
-  </ion-segment-button>
-</ion-segment>
+<div class="scroll" scrollX="true">
+  <ion-segment #S (ionChange)="segmentChanged(S.value)">
+      <div *ngFor="let section of abcData">
+          <ion-segment-button value="{{section.ref}}">
+            <ion-label>{{section.ref}}</ion-label>
+          </ion-segment-button>
+      </div>
+  </ion-segment>
+</div>
 
 <ion-content color="primary">
   <ion-card *ngFor="let article of articles">
@@ -34,7 +32,7 @@
       <ion-grid [hidden]=isHiddenForArticle(article)>
         <ion-row no-padding>
           <ion-col *ngFor="let suggested of suggestedArticles">
-                  <ion-img src ="{{suggested.urlToImage}}" (click)="openInAppBrowser(suggested.url)"></ion-img>
+            <ion-img src ="{{suggested.urlToImage}}" (click)="openInAppBrowser(suggested.url)"></ion-img>
                   <h3>{{suggested.title}}</h3>
           </ion-col>
         </ion-row>

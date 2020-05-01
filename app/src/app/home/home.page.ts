@@ -23,6 +23,7 @@ export class HomePage {
   suggestedArticles = [];
   currArticle;
   isHidden = true;
+  abcData = []
 
   constructor(private apiService: ApiService, private iab: InAppBrowser){}
 
@@ -32,11 +33,15 @@ export class HomePage {
   }
 
   ionViewDidEnter(){
-
     this.apiService.getNews().subscribe((data)=>{
       console.log(data);
       this.articles = data['articles'];
     });
+    this.apiService.getABC().subscribe((data)=>{
+      console.log(data['config']['sections'])
+      this.abcData = data['config']['sections']
+    });
+    console.log(this.abcData)
   }
 
   openInAppBrowser(url : string) {
