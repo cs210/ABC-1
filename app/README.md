@@ -13,14 +13,17 @@ News app in Ionic 4
 
 Some Ionic features only work in a native build. To run on an emulator
 
-`ionic cordova run ios`
-`ionic cordova run android`
+Install the ionic CLI globally: `npm install -g ionic`
+Clone this repository: `git clone https://github.com/cs210/ABC-1.git.`
+Run `npm install` from the app directory.
 
-If you run into problems, try readding the platform by running
-
+To run on ios:
 `ionic cordova platform rm ios`
 `ionic cordova platform add ios`
+`ionic cordova run ios`
 
+To run on android:
 `ionic cordova platform rm android`
 `ionic cordova platform add android`
+`ionic cordova run android`
 
