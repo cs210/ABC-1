@@ -27,10 +27,10 @@ export class ApiService {
     }
 
   getGov(){
-    return this.httpClient.get(`http://newsapi.org/v2/top-headlines?country=us&q=president&apiKey=${this.API_KEY}`);
+    return this.httpClient.get(`http://newsapi.org/v2/everything?q=trump OR government&apiKey=${this.API_KEY}`);
     }
 
   getEcon(){
-    return this.httpClient.get(`http://newsapi.org/v2/top-headlines?country=us&q=employees&apiKey=${this.API_KEY}`);
+    return this.httpClient.get(`http://newsapi.org/v2/everything?q=employees OR economy OR market OR stimulus&apiKey=${this.API_KEY}`);
     }
 }
