@@ -10,13 +10,14 @@
 </ion-header>
 
 <div class="scroll" scrollX="true">
-  <ion-segment #S (ionChange)="segmentChanged(S.value)">
-      <div *ngFor="let section of abcData">
-          <ion-segment-button value="{{section.ref}}">
-            <ion-label>{{section.ref}}</ion-label>
-          </ion-segment-button>
-      </div>
-  </ion-segment>
+<ion-segment #S (ionChange)="segmentChanged(S.value)">
+    <div *ngFor="let section of abcData">
+        <ion-segment-button value="{{json.stringify(section)}}">
+          <ion-label>{{section.title}}</ion-label>
+        </ion-segment-button>
+    </div>
+  
+</ion-segment>
 </div>
 
 <ion-content color="primary">

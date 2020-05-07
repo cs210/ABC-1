@@ -19,22 +19,29 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 export class HomePage {
   
   articles;
-  informPolarity = 'all';
   suggestedArticles = [];
   currArticle;
   isHidden = true;
-  abcData = []
-
+  abcData = [];
+  json = JSON;
+  
   constructor(private apiService: ApiService, private iab: InAppBrowser){}
 
-  segmentChanged(ev: any) {
-    console.log('Segment changed', ev);
-    this.informPolarity = ev;
+  segmentChanged(section: string) {
+    section = JSON.parse(section)
+    console.log('Segment changed', section);
+    console.log(section['url'])
+    this.apiService.getFromURL('https://abcnews.go.com/rsidxfeed/79/json?list=section&view=json&segment=iphone&embeds=true&collection=true&focusintocollection=true&caption=true&tagname=true').subscribe((data)=>{
+      console.log(data)
+    });
+    // this.apiService.getFromURL(section['url']).subscribe((data)=>{
+    //   console.log(data)
+    // });
   }
 
   ionViewDidEnter(){
     this.apiService.getNews().subscribe((data)=>{
-      console.log(data);
+      // console.log(data);
       this.articles = data['articles'];
     });
     this.apiService.getABC().subscribe((data)=>{
@@ -48,7 +55,7 @@ export class HomePage {
     this.iab.create(url, '_blank');
   }
 
-  isHiddenForArticle(article:object) {
+  isHiddenForArticle(article: object) {
     if (JSON.stringify(article) == JSON.stringify(this.currArticle)) return false;
     return true;
   }
