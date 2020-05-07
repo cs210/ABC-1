@@ -6,6 +6,17 @@ import { compareTwoStrings } from 'string-similarity';
 import { removeStopwords } from 'stopword';
 import {FlexLayoutModule} from "@angular/flex-layout";
 
+interface Article {
+  title: string;
+  url: string;
+  image: string;
+  description: string;
+  content: string;
+  source: string;
+  author?: string;
+  date: string;
+};
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -17,38 +28,63 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 })
 
 export class HomePage {
-  
-  articles;
+  // TODO: keep track of active abc articles
+  //    that get displayed when 
+  articles = [];
   suggestedArticles = [];
   currArticle;
   isHidden = true;
   abcData = [];
   json = JSON;
-  
+
   constructor(private apiService: ApiService, private iab: InAppBrowser){}
 
   segmentChanged(section: string) {
+    this.articles = [];
     section = JSON.parse(section)
-    console.log('Segment changed', section);
-    console.log(section['url'])
-    this.apiService.getFromURL('https://abcnews.go.com/rsidxfeed/79/json?list=section&view=json&segment=iphone&embeds=true&collection=true&focusintocollection=true&caption=true&tagname=true').subscribe((data)=>{
-      console.log(data)
+    this.apiService.getFromAbcApi(section['url']).subscribe((data)=>{
+      for (let i in data['channels']) {
+        // TODO : account for empty image and author fields
+        let currChannel = data['channels'][i]
+        if (currChannel['items'].length != 0) {
+          for (let j in currChannel['items']) {
+            let curr = currChannel['items'][j];
+            let article : Article = {
+              title: curr['title'],
+              url: curr['link'],
+              image: curr['abcn:images'][0]['abcn:image']['url'],
+              description: curr['description'],
+              content: curr['abcn:subtitle'],
+              source: 'ABC News',
+              date: curr['pubDate']
+            };
+            this.articles.push(article);
+          }
+        }
+      }
     });
-    // this.apiService.getFromURL(section['url']).subscribe((data)=>{
-    //   console.log(data)
-    // });
   }
 
   ionViewDidEnter(){
     this.apiService.getNews().subscribe((data)=>{
-      // console.log(data);
-      this.articles = data['articles'];
+      for (let i in data['articles']) {
+        let curr = data['articles'][i]
+        let article : Article = {
+          title: curr['title'],
+          url: curr['url'],
+          image: curr['urlToImage'],
+          description: curr['description'],
+          content: curr['content'],
+          source: curr['source']['name'],
+          author: curr['author'],
+          date: curr['publishedAt']
+        };
+        this.articles.push(article);
+      }
     });
-    this.apiService.getABC().subscribe((data)=>{
-      console.log(data['config']['sections'])
+    this.apiService.getAllAbc().subscribe((data)=>{
       this.abcData = data['config']['sections']
     });
-    console.log(this.abcData)
   }
 
   openInAppBrowser(url : string) {
@@ -61,6 +97,7 @@ export class HomePage {
   }
 
   viewpointsOnClick(article: object) {
+    //
     this.isHidden = !this.isHidden;
     this.currArticle = article;
 
@@ -83,7 +120,5 @@ export class HomePage {
     }).map((a) => {
       return a['article'];
     }).slice(0,3);
-
-    console.log(this.suggestedArticles)
   }
 }

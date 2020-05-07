@@ -23,7 +23,7 @@
 <ion-content color="primary">
   <ion-card *ngFor="let article of articles">
     <div (click)="openInAppBrowser(article.url)">
-      <ion-img src="{{article.urlToImage}}"></ion-img>
+      <ion-img src="{{article.image}}"></ion-img>
       <ion-card-header>
         <ion-card-subtitle class="article-title">{{article.title}}</ion-card-subtitle>
       </ion-card-header>
@@ -33,7 +33,7 @@
       <ion-grid [hidden]=isHiddenForArticle(article)>
         <ion-row no-padding>
           <ion-col *ngFor="let suggested of suggestedArticles">
-            <ion-img src ="{{suggested.urlToImage}}" (click)="openInAppBrowser(suggested.url)"></ion-img>
+            <ion-img src ="{{suggested.image}}" (click)="openInAppBrowser(suggested.url)"></ion-img>
                   <h3>{{suggested.title}}</h3>
           </ion-col>
         </ion-row>

@@ -3,5 +3,11 @@
   "integrations": {
     "cordova": {}
   },
-  "type": "angular"
+  "type": "angular",
+  "proxies": [
+    {
+      "path": "/*",
+      "proxyUrl": "https://abcnews.go.com/*"
+    }
+  ]
 }

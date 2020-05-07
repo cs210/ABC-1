@@ -14,20 +14,12 @@ export class ApiService {
     return this.httpClient.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${this.API_KEY}`);
   }
 
-  getABC() {
+  getAllAbc() {
     return this.httpClient.get('https://abcnews.go.com/configuration/iphonev5-60729246');
   }
 
-  getFromURL(url) {
-    console.log(url.slice(0,));
-    if (url.slice(0,5) != 'https') {
-      url = 'https:'.concat(url.slice(5));
-      console.log('NOT SECURE LOL');
-    }
-    url = '/api/rsidxfeed/79/json?list=section&view=json&segment=iphone&embeds=true&collection=true&focusintocollection=true&caption=true&tagname=true'
-    // console.log();
-    
-    return this.httpClient.get(url);
+  getFromAbcApi(url) {
+    return this.httpClient.get(url.replace("http://abcnews.go.com/", "/api/"));
   }
 
   getTimeline(){
