@@ -19,6 +19,9 @@ Some Ionic features only work in a native build. To run on an emulator
 * Run `npm install` from the app directory.
 * Run `npm install node-sass` from the app directory.
 
+To run on web, run:
+* `ionic serve -- --proxy-config src/proxy.conf.json`
+
 To run an ios simulator, run:
 * `ionic cordova platform rm ios`
 * `ionic cordova platform add ios`
