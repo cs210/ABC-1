@@ -8,27 +8,16 @@ News app in Ionic 4
 * Clone this repository: `git clone https://github.com/cs210/ABC-1.git`.
 * Run `npm install` from the app directory.
 * Run `npm install node-sass` from the app directory.
-* Run `ionic serve` in a terminal from the app directory.
 
 ## Running in an emulator
 
-Some Ionic features only work in a native build. To run on an emulator
+Some Ionic features only work in a native build which is why we recommend running in an ios emulator (requires Mac) to get full functionality. 
 
-* Install the ionic CLI globally: `npm install -g ionic`
-* Clone this repository: `git clone https://github.com/cs210/ABC-1.git.`
-* Run `npm install` from the app directory.
-* Run `npm install node-sass` from the app directory.
-
-To run on web, run:
-* `ionic serve -- --proxy-config src/proxy.conf.json`
-
-To run an ios simulator, run:
-* `ionic cordova platform rm ios`
-* `ionic cordova platform add ios`
+To run an ios emulator:
 * `ionic cordova run ios`
 
-To run an android simulator, run:
-* `ionic cordova platform rm android`
-* `ionic cordova platform add android`
-* `ionic cordova run android`
+If unable to run on an emulator, run on web:
+* `ionic serve -- --proxy-config src/proxy.conf.json`
+
+
 
