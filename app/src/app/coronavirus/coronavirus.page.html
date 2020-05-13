@@ -25,14 +25,12 @@
     <div (click)="openInAppBrowser(article.url)">
       <ion-img src="{{article.urlToImage}}"></ion-img>
       <ion-card-header>
-        <ion-card-subtitle>{{article.title}}</ion-card-subtitle>
+        <ion-card-subtitle class="article-title">{{article.title}}</ion-card-subtitle>
       </ion-card-header>
+      <ion-card-content>
+        <p>{{article.description}}</p>
+      </ion-card-content>
     </div>
-    <ion-card-content>
-      <p>
-	{{article.description}}
-      </p>
-    </ion-card-content>
   </ion-card>
   
 	
