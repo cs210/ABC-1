@@ -27,5 +27,5 @@ Navigate to the second tab to access the timeline feature. On this page, there a
 
 * Implementation
 
-The timeline feature works closely with the News Api. We access the api through an ionic api service which delivers get requsts specific to the topic of interest. The News Api returns all article data in a json file which we display as a timeline with a large date, picture, title, and description for each article. 
+The timeline feature works closely with the News Api. We access the api through an ionic api service which delivers get requsts specific to the topic of interest. The timeline.page.ts object calls functions within the api service object. The preset timelines deliver a constant get request while the function for the custom search sends get requests specific to the search. The News Api returns all article data in a json file which we display as a timeline with a large date, picture, title, and description for each article. 
 
